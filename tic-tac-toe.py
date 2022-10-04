@@ -10,7 +10,14 @@ window = pygame.display.set_mode((550, 550))
 
 pygame.display.set_caption('Tic-Tac-Toe')
 
-matrix = [[[pygame.draw.rect(window, WHITE, (BLANK_SIZE * (col + 1) + RECT_SIZE * col, BLANK_SIZE * (row + 1) + RECT_SIZE * row, RECT_SIZE, RECT_SIZE)), -1] for col in  range(3)] for row in range(3)]
+# matrix = [[[pygame.draw.rect(window, WHITE, (BLANK_SIZE * (col + 1) + RECT_SIZE * col, BLANK_SIZE * (row + 1) + RECT_SIZE * row, RECT_SIZE, RECT_SIZE)), -1] for col in  range(3)] for row in range(3)]
+
+matrix = []
+for row in range(3):
+  for col in range(3):
+    rect = pygame.draw.rect(window, WHITE, (BLANK_SIZE * (col + 1) + RECT_SIZE * col, BLANK_SIZE * (row + 1) + RECT_SIZE * row, RECT_SIZE, RECT_SIZE))
+    status = -1
+    matrix.append([rect, status])
 
 run = True
 
