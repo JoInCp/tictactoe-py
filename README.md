@@ -46,16 +46,19 @@ if event.type == pygame.MOUSEBUTTONUP:
                 matrix[row][col][1] = true_value%2
               
               true_value += 1
-              <!-- 가로확인 -->
-              for _row in range(3): //가로확인
+```
+가로확인
+```python
+              for _row in range(3):
                 check = 0
                 for _col in range(3):
                   if STATUS[matrix[_row][_col][1]] == current_turn:
                     check += 1
                 if check == 3:
                   end_game = True
-                  
-              <!-- 세로확인 -->
+```
+세로확인
+```python
               for _col in range(3):
                 check = 0
                 for _row in range(3):
@@ -64,21 +67,26 @@ if event.type == pygame.MOUSEBUTTONUP:
                 if check == 3:
                   end_game = True
                   
-              <!-- 우대각 -->
+```
+우대각확인
+```python
               check = 0 
               for _col, _row in zip(range(3), range(3)):
                 if STATUS[matrix[_row][_col][1]] == current_turn:
                   check += 1
               if check == 3:
                 end_game = True 
-              <!-- 좌대각 확인 -->
+```
+좌대각확인
+```python
               check = 0
               for _col, _row in zip(range(3), range(2, -1, -1)):
                 if STATUS[matrix[_row][_col][1]] == current_turn:
                   check += 1
               if check == 3:
                 end_game = True
-
+```
+```python
   pygame.display.update()
   if end_game:
     print(f'{current_turn} 승리')
