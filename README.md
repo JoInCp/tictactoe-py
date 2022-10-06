@@ -1,10 +1,10 @@
 # tic-tac-toe
 
 
-Python을 이용한 Tic Tac Toe 만들기
+##Python을 이용한 Tic Tac Toe 만들기
 
 ```python
-상수정의
+###상수정의
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 WINDOW_SIZE = 550
@@ -15,16 +15,16 @@ LINE_SIZE = 3
 STATUS = ['O', 'X', None]
 TURNS = ['O', 'X']
 
-정사각형 칸 만들기
+###정사각형 칸 만들기
 matrix = [[[pygame.draw.rect(window, WHITE, (BLANK_SIZE * (col + 1) + RECT_SIZE * col, BLANK_SIZE * (row + 1) + RECT_SIZE * row, RECT_SIZE, RECT_SIZE)), -1] for col in  range(3)] for row in range(3)]
 
-O의 순서인지 X의순서인지 구분
+###O의 순서인지 X의순서인지 구분
 run = True
 end_game = False
 true_value = 0
 current_turn = TURNS[true_value%2]
   
-어느칸을 클릭한지 파악하고 O/X를 그리고 승리 조건을 판단
+###어느칸을 클릭한지 파악하고 O/X를 그리고 승리 조건을 판단
 if event.type == pygame.MOUSEBUTTONUP:
       pos = pygame.mouse.get_pos()
 
@@ -43,7 +43,7 @@ if event.type == pygame.MOUSEBUTTONUP:
                 matrix[row][col][1] = true_value%2
               
               true_value += 1
-              for _row in range(3): #가로확인
+              for _row in range(3): ###가로확인
                 check = 0
                 for _col in range(3):
                   if STATUS[matrix[_row][_col][1]] == current_turn:
@@ -51,7 +51,7 @@ if event.type == pygame.MOUSEBUTTONUP:
                 if check == 3:
                   end_game = True
 
-              for _col in range(3): #세로확인
+              for _col in range(3): ###세로확인
                 check = 0
                 for _row in range(3):
                   if STATUS[matrix[_row][_col][1]] == current_turn:
