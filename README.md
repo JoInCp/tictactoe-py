@@ -3,8 +3,8 @@
 
 Python을 이용한 Tic Tac Toe 만들기
 
-```python
 상수정의
+```python
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 WINDOW_SIZE = 550
@@ -14,11 +14,13 @@ BLANK_SIZE = 25
 LINE_SIZE = 3
 STATUS = ['O', 'X', None]
 TURNS = ['O', 'X']
-
+```
 정사각형 칸 만들기
+```python
 matrix = [[[pygame.draw.rect(window, WHITE, (BLANK_SIZE * (col + 1) + RECT_SIZE * col, BLANK_SIZE * (row + 1) + RECT_SIZE * row, RECT_SIZE, RECT_SIZE)), -1] for col in  range(3)] for row in range(3)]
-
+```
 O의 순서인지 X의순서인지 구분
+```python
 run = True
 end_game = False
 true_value = 0
