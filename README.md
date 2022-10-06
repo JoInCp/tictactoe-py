@@ -25,8 +25,9 @@ run = True
 end_game = False
 true_value = 0
 current_turn = TURNS[true_value%2]
-  
+```
 어느칸을 클릭한지 파악하고 O/X를 그리고 승리 조건을 판단
+```python
 if event.type == pygame.MOUSEBUTTONUP:
       pos = pygame.mouse.get_pos()
 
