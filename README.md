@@ -47,7 +47,7 @@ if event.type == pygame.MOUSEBUTTONUP:
               
               true_value += 1
               <!-- 가로확인 -->
-              for _row in range(3): 
+              for _row in range(3): //가로확인
                 check = 0
                 for _col in range(3):
                   if STATUS[matrix[_row][_col][1]] == current_turn:
