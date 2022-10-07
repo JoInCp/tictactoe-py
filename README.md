@@ -2,6 +2,7 @@
 
 
 ## Python을 이용한 Tic Tac Toe 만들기
+###pygame
 
 ### 상수정의
 ```python
