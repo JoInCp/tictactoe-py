@@ -51,48 +51,48 @@ if event.type == pygame.MOUSEBUTTONUP:
 ```
 ### 가로확인
 ```python
-              for _row in range(3):
-                check = 0
-                for _col in range(3):
-                  if STATUS[matrix[_row][_col][1]] == current_turn:
-                    check += 1
-                if check == 3:
-                  end_game = True
+for _row in range(3):
+  check = 0
+  for _col in range(3):
+    if STATUS[matrix[_row][_col][1]] == current_turn:
+      check += 1
+  if check == 3:
+    end_game = True
 ```
 ### 세로확인
 ```python
-              for _col in range(3):
-                check = 0
-                for _row in range(3):
-                  if STATUS[matrix[_row][_col][1]] == current_turn:
-                    check += 1
-                if check == 3:
-                  end_game = True
+for _col in range(3):
+  check = 0
+  for _row in range(3):
+    if STATUS[matrix[_row][_col][1]] == current_turn:
+      check += 1
+  if check == 3:
+    end_game = True
                   
 ```
 ### 우대각확인
 ```python
-              check = 0 
-              for _col, _row in zip(range(3), range(3)):
-                if STATUS[matrix[_row][_col][1]] == current_turn:
-                  check += 1
-              if check == 3:
-                end_game = True 
+check = 0 
+for _col, _row in zip(range(3), range(3)):
+  if STATUS[matrix[_row][_col][1]] == current_turn:
+    check += 1
+if check == 3:
+  end_game = True 
 ```
 ### 좌대각확인
 ```python
-              check = 0
-              for _col, _row in zip(range(3), range(2, -1, -1)):
-                if STATUS[matrix[_row][_col][1]] == current_turn:
-                  check += 1
-              if check == 3:
-                end_game = True
+check = 0
+for _col, _row in zip(range(3), range(2, -1, -1)):
+  if STATUS[matrix[_row][_col][1]] == current_turn:
+    check += 1
+if check == 3:
+  end_game = True
 ```
 ### 현재 상태 업데이트 및 게임이 끝나면 반복문과 pygame 종료
 ```python
-  pygame.display.update()
-  if end_game:
-    print(f'{current_turn} 승리')
-    pygame.time.delay(3000)
-    run = False
+pygame.display.update()
+if end_game:
+  print(f'{current_turn} 승리')
+  pygame.time.delay(3000)
+  run = False
 ```
